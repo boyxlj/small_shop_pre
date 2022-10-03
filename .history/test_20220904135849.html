@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script type="text/javascript">
+    const data =  [
+		{
+			"type": "2",
+			"name": "张三哈哈",
+			"createTime": "2022-07-03T02:18:25.000Z",
+			"orderNumber": "hhAQLjSrUe2KJehdebnUL",
+			"totalPrice": 29493,
+			"orderList": [
+				{
+					"orderId": 64,
+					"singleTotalPrice": 4699,
+					"type": "2",
+					"orderNumber": "hhAQLjSrUe2KJehdebnUL",
+					"createTime": "2022-07-03T02:18:25.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 16,
+					"num": 1,
+					"price": 4699,
+					"title": "HUAWEI P50E",
+					"prePrice": "4499",
+					"titleImg": "https://res6.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487253319/428_428_A1A370ED9D04CF6DED31AA0B84C48FC0mp.png",
+					"name": "张三哈哈",
+					"phone": "175383536006",
+					"detailAddress": "天津市津南区海河教育园区"
+				},
+				{
+					"orderId": 65,
+					"singleTotalPrice": 13998,
+					"type": "2",
+					"orderNumber": "5mRMfegYf4ANIhL_qBSCO",
+					"createTime": "2022-07-03T05:58:14.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 3,
+					"num": 2,
+					"price": 6999,
+					"title": "华为电脑1",
+					"prePrice": "8999",
+					"titleImg": "https://res5.vmallres.com/pimages/uomcdn/CN/pms/202112/gbom/6941487262038/428_428_F5608DB88FB841A47DFCE5A1E057CF0Amp.png",
+					"name": "李四",
+					"phone": "175383506123",
+					"detailAddress": "天津市津南区海河教育园区"
+				},
+				{
+					"orderId": 66,
+					"singleTotalPrice": 8097,
+					"type": "2",
+					"orderNumber": "5mRMfegYf4ANIhL_qBSCO",
+					"createTime": "2022-07-03T05:58:14.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 25,
+					"num": 3,
+					"price": 2699,
+					"title": "华为智慧屏 SE 65 MEMC",
+					"prePrice": "2499",
+					"titleImg": "https://res1.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487210169/428_428_DCA9929CCA8B17006663DFF9596765B3mp.png",
+					"name": "李四",
+					"phone": "175383506123",
+					"detailAddress": "天津市津南区海河教育园区"
+				},
+				{
+					"orderId": 67,
+					"singleTotalPrice": 2699,
+					"type": "2",
+					"orderNumber": "5mRMfegYf4ANIhL_qBSCO",
+					"createTime": "2022-07-03T05:58:14.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 21,
+					"num": 1,
+					"price": 2699,
+					"title": "HUAWEI MateBook 14s",
+					"prePrice": "2499",
+					"titleImg": "https://res3.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487243563/428_428_C341573C94BAEB18069835528FE7C0A3mp.png",
+					"name": "李四",
+					"phone": "175383506123",
+					"detailAddress": "天津市津南区海河教育园区"
+				}
+			]
+		}
+	]
+
+  const arr =  [
+				{
+					"orderId": 64,
+					"singleTotalPrice": 4699,
+					"type": "2",
+					"orderNumber": "hhAQLjSrUe2KJehdebnUL",
+					"createTime": "2022-07-03T02:18:25.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 16,
+					"num": 1,
+					"price": 4699,
+					"title": "HUAWEI P50E",
+					"prePrice": "4499",
+					"titleImg": "https://res6.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487253319/428_428_A1A370ED9D04CF6DED31AA0B84C48FC0mp.png",
+					"name": "张三哈哈",
+					"phone": "175383536006",
+					"detailAddress": "天津市津南区海河教育园区"
+				},
+				{
+					"orderId": 65,
+					"singleTotalPrice": 13998,
+					"type": "2",
+					"orderNumber": "5mRMfegYf4ANIhL_qBSCO",
+					"createTime": "2022-07-03T05:58:14.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 3,
+					"num": 2,
+					"price": 6999,
+					"title": "华为电脑1",
+					"prePrice": "8999",
+					"titleImg": "https://res5.vmallres.com/pimages/uomcdn/CN/pms/202112/gbom/6941487262038/428_428_F5608DB88FB841A47DFCE5A1E057CF0Amp.png",
+					"name": "李四",
+					"phone": "175383506123",
+					"detailAddress": "天津市津南区海河教育园区"
+				},
+				{
+					"orderId": 66,
+					"singleTotalPrice": 8097,
+					"type": "2",
+					"orderNumber": "5mRMfegYf4ANIhL_qBSCO",
+					"createTime": "2022-07-03T05:58:14.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 25,
+					"num": 3,
+					"price": 2699,
+					"title": "华为智慧屏 SE 65 MEMC",
+					"prePrice": "2499",
+					"titleImg": "https://res1.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487210169/428_428_DCA9929CCA8B17006663DFF9596765B3mp.png",
+					"name": "李四",
+					"phone": "175383506123",
+					"detailAddress": "天津市津南区海河教育园区"
+				},
+				{
+					"orderId": 67,
+					"singleTotalPrice": 2699,
+					"type": "2",
+					"orderNumber": "5mRMfegYf4ANIhL_qBSCO",
+					"createTime": "2022-07-03T05:58:14.000Z",
+					"sendTime": "",
+					"pay": "",
+					"detailId": 21,
+					"num": 1,
+					"price": 2699,
+					"title": "HUAWEI MateBook 14s",
+					"prePrice": "2499",
+					"titleImg": "https://res3.vmallres.com/pimages/uomcdn/CN/pms/202205/gbom/6941487243563/428_428_C341573C94BAEB18069835528FE7C0A3mp.png",
+					"name": "李四",
+					"phone": "175383506123",
+					"detailAddress": "天津市津南区海河教育园区"
+				}
+			]
+
+
+  const res = arr.map(item=>{
+    return item.orderNumber
+  })
+  console.log([...new Set(res)])
+
+  </script>
+</body>
+</html>
