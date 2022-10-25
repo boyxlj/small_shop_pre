@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+## 说明
+> 本项目前后端分离，前端参考小米商城实现.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> 前台已经部署上线，欢迎访问：
+> `PC端/移动端：`http://www.11e.top/xlj/pre.
 
-## Available Scripts
+> 当前是本项目的前台，后台管理请移步到 <a href='http://www.11e.top/xlj/back' target="_blank">http://www.11e.top/xlj/back</a>.
 
-In the project directory, you can run:
+> 如果觉得这个项目还不错，您可以点右上角 Star支持一下， 谢谢！
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 项目介绍
+本项目前后端分离;参考小米商城实现。
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+共包含了12个页面：首页、登录、注册、商品展示、商品详情、关于微商城、我的收藏、购物车、确认订单、订单结算、我的订单以及用于信息页面。
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+实现了商品的展示、商品分类查询、关键字搜索商品、商品详细信息展示、登录、注册、用户购物车、订单的确认、订单结算、用户订单、用户收藏列表等功能。
 
-### `npm run build`
+## 技术栈
+PC端基于：`React`+`react-router-dom`+`redux`+`antd`+`Axios`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+移动端基于：`Vue`+`Vue-Router`+`TypeScript`+`vant`+`Axios`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+小程序基于：`微信开发者工具`+`Weapp`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+后端基于：`Node.js(express框架`)+`Mysql`实现。
 
-### `npm run eject`
+## 项目地址
+> PC端：<a href='https://github.com/boyxlj/small_shop_pre' target="_blank">https://github.com/boyxlj/small_shop_pre</a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> 移动端：<a href='https://github.com/boyxlj/small_shop_mobile' target="_blank">https://github.com/boyxlj/small_shop_mobile</a>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> 小程序：<a href='https://github.com/codeXlj/small_shop_mini' target="_blank">https://github.com/boyxlj/small_shop_mini</a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> 后台：<a href='https://github.com/boyxlj/small_shop_back' target="_blank">https://github.com/boyxlj/small_shop_back</a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> 服务端：<a href='https://github.com/codeXlj/small-shop-serve' target="_blank">https://github.com/boyxlj/small_shop_serve</a>
 
-## Learn More
+## 项目运行
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**如果需要自己运行后端，请先移步到<a href='https://github.com/codeXlj/small-shop-serve' target="_blank">服务端</a>项目**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
 
-### Code Splitting
+1.项目下载
+	git clone https://github.com/boyxlj/small_shop_pre
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+2.安装依赖
+	cd small_shop_pre
+	npm install
+	
+3.启动项目
+	npm start
+	
+```
