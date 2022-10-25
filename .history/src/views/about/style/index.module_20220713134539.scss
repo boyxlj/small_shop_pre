@@ -1,0 +1,15 @@
+.box{
+  width: 100%;
+  min-height: 500px;
+  background-color: rgb(245, 245, 245);
+  padding: 15px 0;
+  user-select:text !important;
+  .content{
+    width: 1226px;
+    margin: 0 auto;
+    .editor{
+      background-color: #fff;
+      padding: 20px 40px;
+    }
+  }
+}

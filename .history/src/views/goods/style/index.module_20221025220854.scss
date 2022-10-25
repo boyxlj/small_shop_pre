@@ -1,0 +1,51 @@
+.goods{
+  width:100%;
+  min-height: 800px;
+  // margin: -15px auto;
+  background-color: red;
+  .route1{
+    width:1226px;
+    display: flex;
+    font-size: 17px;
+    margin: 10px auto;
+    user-select: none;
+    span{
+      &:first-child{
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+        transition: all .3s;
+        &:hover{
+          color: #1890ff;
+        }
+      }
+      color: #606266;
+    }
+    .gt{
+      margin: 0 8px;
+      color: #ccc;
+    }
+  }
+  .routeTabs{
+    user-select: none;
+    width:1226px !important;
+    margin: 20px auto 0;
+    overflow: hidden;
+  }
+  .allShops{
+    width: 100%;
+    min-height: 800px;
+    background: #f5f5f5;
+    .loading{
+      display: flex;
+      justify-content: center;
+      padding-top: 80px;
+    }
+  }
+  .pageNation{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    padding-bottom: 40px;
+  }
+}
