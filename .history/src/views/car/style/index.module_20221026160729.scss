@@ -1,0 +1,125 @@
+.box {
+  width: 100%;
+  min-height: 50px;
+  user-select: none;
+  position: relative;
+  top: -15px;
+  .car {
+    width: 1226px;
+    margin: 0 auto;
+    min-height: 600px;
+  }
+  .sticky {
+    width: 1226px;
+    height: 60px;
+    margin: 0 auto;
+    background-color: skyblue;
+    position: sticky;
+    bottom: 0px;
+    background-color: #fff;
+    box-shadow: 0px -3px 5px #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .left {
+      margin-left: 20px;
+      span {
+        font-size: 16px;
+        &:first-child{
+          transition: all .2s;
+          cursor: pointer;
+          &:hover {
+            color: var(--themeColor);
+          }
+        }
+        &:nth-child(2) {
+          margin-left: 15px;
+          b {
+            color: var(--themeColor);
+            margin: 0 3px;
+          }
+        }
+        &:last-child {
+          margin-left: 16px;
+          transition: all .2s;
+          cursor: pointer;
+          &:hover {
+            color: var(--themeColor);
+          }
+        }
+      }
+    }
+    .right {
+      display: flex;
+      height: 100%;
+      .price {
+        margin-right: 40px;
+        line-height: 60px;
+        span {
+          color: var(--themeColor);
+          font-size: 15px;
+          &:first-child {
+            font-size: 15px;
+          }
+          &:nth-child(2) {
+            margin-left: 10px;
+            font-size: 34px;
+            font-weight: 530;
+          }
+        }
+      }
+      .jiesuan {
+        width: 210px;
+        background-color: var(--themeColor);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+          background-color: var(--themeColor);
+        }
+      }
+    }
+  }
+}
+.titleImg {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+}
+.title {
+  font-size: 20px;
+  font-weight: 570;
+  transition: all 0.2s;
+  cursor: pointer;
+  &:hover {
+    color: var(--themeColor);
+  }
+}
+.xiaoji{
+  color: var(--themeColor);
+  font-weight: 500;
+  font-size: 18px;
+}
+.results{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 30px !important;
+  transform: translate(-50%,-50%);
+}
+
+.deletes{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    color: var(--themeColor);
+  }
+}

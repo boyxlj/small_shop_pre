@@ -1,0 +1,149 @@
+$theme-color:red;
+
+.swiper {
+  position: relative;
+  .swiperBoss {
+    margin: 0 auto;
+    overflow: hidden !important;
+    .swiperBox {
+      height: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .list {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-51%);
+    left: 230px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 36px;
+    display: flex;
+    .left {
+      width: 200px;
+      height: 100%;
+      padding: 15px 0;
+      .item {
+        height: 45px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 0 20px;
+        transition: all 0.3s;
+        align-items: center;
+        &:hover {
+          background: #fff;
+          border-radius: 4px;
+          color: var($theme-color);
+          
+          span {
+            &:last-child {
+              color: var($theme-color);
+            }
+          }
+        }
+
+        span {
+          &:first-child {
+            width: 133px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 15px;
+          }
+          &:last-child {
+            color: rgb(175, 175, 175);
+            font-size: 17px;
+          }
+        }
+      }
+    }
+    .right {
+      width: 940px;
+      height: 100%;
+      left: 300px;
+      top: 0;
+      padding: 20px 30px;
+      background-color: #fff;
+      display: flex;
+      flex-wrap: wrap;
+      border-radius: 0 8px 8px 0;
+      justify-content: flex-start;
+      align-content: flex-start;
+
+      .contentItem {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 239px;
+        height: 70px;
+        margin: 10px 25px;
+
+        &:hover {
+          color: #f67000;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+        }
+        span {
+          display: inline-block;
+          width: 166px;
+          margin-left: 8px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      .selectAll {
+        width: 239px;
+        height: 70px;
+        margin: 10px 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .textTitle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 145px;
+          height: 40px;
+          border: 1px solid #ccc;
+          border-radius: 20px;
+          text-align: center;
+          cursor: pointer;
+          transition: all 0.3s;
+          position: relative;
+          &:hover {
+            border: 1px solid #f67000;
+            color: #f67000;
+          }
+        }
+      }
+    }
+  }
+}
+.empty {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active{
+  color: #f67000;
+  .charts{
+    color: #f67000;
+  }
+}

@@ -1,0 +1,16 @@
+.swiperBoss{
+  margin: 0 auto;
+  overflow: hidden !important;
+  position: relative;
+  .swiperBox{
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    cursor: pointer;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .textTitle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 140px;
+      height: 30px;
+      border: 2px solid #ccc;
+      border-radius: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      position: relative;
+      z-index: 999;
+    }
+
+    .textTitle::after {
+      content: "";
+      width: 150px;
+      height: 40px;
+      position: absolute;
+      left: -5px;
+      top: -5px;
+      z-index: -1;
+      background-image: linear-gradient(var(--degValue), rgb(238, 95, 95),
+          rgb(90, 167, 226),
+          rgb(236, 96, 234),
+          rgb(124, 216, 245));
+      border-radius: 20px;
+      animation: dong 3s infinite;
+    }
+
+    @property --degValue {
+      syntax: "<angle>";
+      inherits: false;
+      initial-value: 0deg;
+    }
+
+    @keyframes dong {
+      0% {
+        --degValue: 0deg;
+      }
+
+      100% {
+        --degValue: 360deg;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="textTitle">
+
+  </div>
+</body>
+
+</html>

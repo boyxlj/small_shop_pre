@@ -1,0 +1,29 @@
+
+.swiper{
+  .swiperBoss{
+    margin: 0 auto;
+    overflow: hidden !important;
+    position: relative;
+    .swiperBox{
+      height: 100%;
+      margin: 0 auto;
+      overflow: hidden;
+      cursor: pointer;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  
+  .list{
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    width: 200px;
+    height: 380px;
+    background-color: skyblue;
+    box-shadow: 0 0 20px #ccc;
+  }
+}
