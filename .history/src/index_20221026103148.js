@@ -5,8 +5,8 @@ import './index.css'
 import { HashRouter } from "react-router-dom"
 import {Provider} from "react-redux"
 import {store,persistor} from "./store/store"
-// import 'antd/dist/antd.min.css';
-import "./App.less"
+import 'antd/dist/antd.min.css';
+// import "./App.less"
 import { PersistGate } from 'redux-persist/integration/react'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter>
