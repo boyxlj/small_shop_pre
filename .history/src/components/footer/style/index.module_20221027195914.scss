@@ -1,0 +1,74 @@
+.footer{
+  height: 300px;
+  box-shadow: 0px 0px 10px rgb(254, 245, 245);
+  background-color: #fff;
+  user-select: none;
+  .top{
+    height: 140px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    background-color: red;
+    overflow: hidden;
+    
+    p{
+      overflow: hidden;
+      margin-top: 15px;
+      img{
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        position: relative;
+        top: -3px;
+      }
+      span{
+        margin-left: 20px;
+        font-size: 18px;
+      }
+    }
+  }
+  .center{
+    height:160px ;
+    overflow: hidden;
+    background-color: skyblue;
+    .github{
+      font-size: 50px;
+      text-align: center;
+      margin-top: 15px;
+      cursor: pointer;
+      overflow: hidden;
+      .gitLogo{
+        transition: all .5s;
+        overflow: hidden;
+        &:hover{
+          transform: rotate(360deg);
+        }
+      }
+    }
+    .links{
+      display: flex;
+      justify-content: center;
+      margin-top: 15px;
+      margin-left: 22px;
+      a{
+        font-size: 16px;
+        color: black;
+        margin: 0 20px;
+        &:hover{
+          color: var(--themeColor);
+        }
+      }
+      span{
+        font-size: 16px;
+        color: #ccc;
+      }
+    }
+    .copy{
+      margin-top: 20px;
+      font-size: 15px;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

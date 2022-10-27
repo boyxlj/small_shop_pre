@@ -1,0 +1,41 @@
+body,html{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.ant-tabs-nav{
+  margin-bottom: 0 !important;
+}
+li{
+  list-style: none;
+}
+
+:root {
+  --themeColor: #CF0A2C;
+  --btnBorderRadius:6px;
+  --shopItemBorderRadius:6px;   
+  --hoverThemeColor:#ba1934;
+}
+
+.item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+————————————————
+版权声明：本文为CSDN博主「知识的海洋狗刨」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/yangxun9264986/article/details/127300055
