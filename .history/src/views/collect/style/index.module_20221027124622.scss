@@ -1,0 +1,118 @@
+.collect {
+  width: 100%;
+ background-color: #f5f5f5;
+ .loading{
+  width: 100%;
+  min-height: 430px;
+  background: #f5f5f5;
+  overflow: hidden;
+  background-color: skyblue;
+  margin-bottom: 20px;
+  text-align: center;
+  // background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+ }
+ .content{
+  width: 1226px;
+  margin: 0 auto;
+  min-height: 500px;
+ user-select: none;
+ overflow: hidden;
+ padding-top: 15px;
+  .item {
+    width: 90%;
+    height: 115px;
+    background-color: #fff;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    transition: all .3s;
+    .left {
+      margin-left: 15px;
+      display: flex;
+      justify-content: flex-start;
+      .img {
+        width: 80px;
+        height: 90%;
+        margin-top: 6px;
+        cursor: pointer;
+        img{
+          width: 80px;
+          height: 80px;
+          margin-top: 10px;
+          object-fit: cover;
+        }
+      }
+      .descs {
+        margin-left: 15px;
+        .title {
+          font-size: 22px;
+          font-weight: bold;
+          margin-top: 7px;
+          cursor: pointer;
+        }
+        .desc {
+          width: 700px;
+          color: #b0b0b0;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          margin-top: 6px;
+        }
+        .time {
+          margin-top: 10px;
+          font-size: 12px;
+          span {
+            font-size: 18px;
+            &:first-child {
+              color: var(--themeColor);
+              margin-left: 50px;
+            }
+            &:last-child {
+              color: #b0b0b0;
+              font-size: 15px;
+              text-decoration: line-through;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 0 10px #ddd;
+      .right {
+        opacity: 1;
+      }
+    }
+    .right {
+      margin-top: 68px;
+      margin-right: 50px;
+      opacity: 0;
+      transition: all 0.2s;
+      display: flex;
+      overflow: hidden;
+      span {
+        display: flex;
+        width: 33px;
+        height: 33px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        margin-left: 20px;
+        &:hover{
+          border: 1px solid var(--themeColor);
+          color: var(--themeColor);
+        }
+      }
+    }
+  }
+ }
+ 
+}
