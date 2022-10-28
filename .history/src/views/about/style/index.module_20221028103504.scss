@@ -1,0 +1,27 @@
+.box {
+  width: 100%;
+  min-height: 600px;
+  background-color: rgb(245, 245, 245);
+  padding: 15px 0;
+  user-select: text !important;
+  border-radius: 14px !important;
+  .content {
+    width: 1226px;
+    margin: 0 auto;
+    border-radius: 14px !important;
+
+    .editor {
+      background-color: #fff;
+      padding: 20px 40px;
+    }
+  }
+}
+.loading {
+  width: 100%;
+  min-height: 600px;
+  background: #fff;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 4px;
+}
