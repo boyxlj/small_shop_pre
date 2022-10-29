@@ -84,6 +84,7 @@ export default function Car() {
 
   //修改选购数量
   const changeNumber = async (e, carId) => {
+    console.log(e)
     setDisableNum(true)
     const obj = { userId, num: e, carId }
     const { data: res } = await updateCarNum(obj).finally(() => setDisableNum(false))
