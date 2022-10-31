@@ -26,7 +26,7 @@ export default function Swiper(props) {
     setIndex(detailId)
     if (category) {
       const res = category?.filter(item => item.detailId == detailId)
-      setContent(res[0]?.children)
+      setContent(res[0]?.childrenData)
     }
   }
   //鼠标移出商品分类

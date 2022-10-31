@@ -8,6 +8,7 @@ import zhCN from 'antd/es/locale/zh_CN';
 import { ConfigProvider } from 'antd';
 import { useDispatch } from 'react-redux';
 import { setPageOn } from '../../views/goods/store/pageNation';
+import {randomSort} from "../../utils/randomSort"
 export default function Swiper(props) {
   const { swiperList, category } = props
   const dispatch = useDispatch()
@@ -19,7 +20,6 @@ export default function Swiper(props) {
   const navigateCategory = (detailId) => {
     navigate(`/goods?category=${detailId}`)
   }
-  
   //鼠标进入商品分类
   const enterCategory = (detailId) => {
     setIsShowShopList(true)

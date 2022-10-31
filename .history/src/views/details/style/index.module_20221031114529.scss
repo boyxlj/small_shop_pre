@@ -174,11 +174,6 @@
         align-items: center;
         justify-content: flex-start;
         span{
-          transition: all .1s;
-          cursor: pointer;
-            &:hover{
-              color: var(--themeColor);
-            }
           margin-right: 30px;
           .icon{
             margin-right: 5px;

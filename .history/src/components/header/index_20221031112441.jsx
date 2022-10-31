@@ -4,12 +4,13 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import { changeLoginDialogShow, setPrePath, changeRegisterDialogShow, isSureLogin } from '../../store/reducer/login'
 import { setPageOn } from '../../views/goods/store/pageNation'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
-import {ExclamationCircleOutlined} from "@ant-design/icons"
+import {ExclamationCircleOutlined} from ""
 import { Dropdown, Menu, Modal, Tabs, Input } from "antd"
 import "../../assets/css/iconfont/iconfont.css"
 const { Search } = Input;
 const { confirm } = Modal;
 const { TabPane } = Tabs;
+const operations = <a>Extra Action</a>;
 
 export default function Header() {
   const carTotal = useSelector(state => state.global.carTotal)
@@ -103,9 +104,13 @@ export default function Header() {
         {
           key: '2',
           label: (
+            // <Popconfirm placement="bottom"
+            //   title="确认退出登录嘛？" onConfirm={(e) => cancelLogin(e)}
+            //   okText="是的" cancelText="取消">
             <a href='#' onClick={(e) => cancelLogin(e)}>
               退出登录
             </a>
+            // {/* </Popconfirm> */}
           ),
         },
       ]}

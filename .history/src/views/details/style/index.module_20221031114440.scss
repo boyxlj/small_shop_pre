@@ -24,11 +24,6 @@
       .topLeft {
         font-size: 30px;
         font-weight: 600;
-        transition: all .3s;
-        cursor: pointer;
-          &:hover{
-            color: var(--themeColor);
-          }
       }
       .topRight {
         span {
@@ -70,7 +65,10 @@
         .title{
           font-size: 27px;
           font-weight: 600;
-          
+          transition: all .3s;
+          &:hover{
+            color: var(themeColor);
+          }
         }
         .descs{
           position: relative;
@@ -174,11 +172,6 @@
         align-items: center;
         justify-content: flex-start;
         span{
-          transition: all .1s;
-          cursor: pointer;
-            &:hover{
-              color: var(--themeColor);
-            }
           margin-right: 30px;
           .icon{
             margin-right: 5px;

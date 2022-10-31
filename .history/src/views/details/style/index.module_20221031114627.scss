@@ -173,8 +173,9 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+       
         span{
-          transition: all .1s;
+          transition: all .3s;
           cursor: pointer;
             &:hover{
               color: var(--themeColor);

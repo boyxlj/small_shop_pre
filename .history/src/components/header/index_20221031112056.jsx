@@ -1,15 +1,14 @@
-import React, { useState, useMemo, useEffect } from 'react'
+import React,{useState,useMemo, useEffect} from 'react'
 import style from "./style/index.module.scss"
-import { useNavigate, useLocation } from 'react-router-dom'
+import { useNavigate,useLocation } from 'react-router-dom'
 import { changeLoginDialogShow, setPrePath, changeRegisterDialogShow, isSureLogin } from '../../store/reducer/login'
 import { setPageOn } from '../../views/goods/store/pageNation'
 import { useDispatch, useSelector } from 'react-redux/es/exports'
-import {ExclamationCircleOutlined} from "@ant-design/icons"
-import { Dropdown, Menu, Modal, Tabs, Input } from "antd"
+import { Dropdown, Menu, Popconfirm, Tabs,Input } from "antd"
 import "../../assets/css/iconfont/iconfont.css"
 const { Search } = Input;
-const { confirm } = Modal;
 const { TabPane } = Tabs;
+const operations = <a>Extra Action</a>;
 
 export default function Header() {
   const carTotal = useSelector(state => state.global.carTotal)
@@ -20,26 +19,27 @@ export default function Header() {
   const router = useNavigate()
   const location = useLocation()
   //搜索按下回车或点击搜索按钮
-  const onSearch = (value) => {
-    if (!value) return
+  const onSearch = (value) =>{
+    if(!value) return
     dispatch(setPageOn(1))
     router(`/goods?keyword=${value}`)
-
+   
   }
-
+  
 
   const OperationsSlot = {
-    left: <span className={style.left} >Small Shop</span>,
+    // left: <a href='#' className={style.left} onClick={(e)=>clickLogo(e)}>Small Shop</a>,
+    left: <span  className={style.left} >Small Shop</span>,
     right: <Search
-      placeholder="请输入搜索内容"
-      className={style.right}
-      onSearch={onSearch}
-      size="large"
-      style={{
-        width: 300,
-      }} />
+    placeholder="请输入搜索内容"
+    className={style.right}
+    onSearch={onSearch}
+    size="large"
+    style={{
+      width: 300,
+    }} />
   };
-
+  
 
   const login = (e) => {
     e.preventDefault()
@@ -64,28 +64,14 @@ export default function Header() {
   }
   const cancelLogin = (e) => {
     e.preventDefault()
-    confirm({
-      title: '温馨提示',
-      icon: <ExclamationCircleOutlined />,
-      content: '确认退出登录嘛?',
-      okText: "确认退出",
-      cancelText: "取消",
-      centered:true,
-      onOk() {
-        dispatch(isSureLogin())
-        dispatch(setPrePath(""))
-        localStorage.removeItem("token")
-        localStorage.removeItem("persist:root")
-        router("/")
-      },
-      onCancel() {
-      },
-    });
-
-
+    dispatch(isSureLogin())
+    dispatch(setPrePath(""))
+    localStorage.removeItem("token")
+    localStorage.removeItem("persist:root")
+    router("/")
   }
   //跳转个人中心
-  const profile = (e) => {
+  const profile =  (e) => {
     e.preventDefault()
     router("/order/profile")
   }
@@ -95,7 +81,7 @@ export default function Header() {
         {
           key: '1',
           label: (
-            <a target="_blank" href='#' onClick={(e) => profile(e)} >
+            <a target="_blank"  href='#' onClick={(e)=>profile(e)} >
               个人中心
             </a>
           ),
@@ -103,9 +89,13 @@ export default function Header() {
         {
           key: '2',
           label: (
-            <a href='#' onClick={(e) => cancelLogin(e)}>
-              退出登录
-            </a>
+            // <Popconfirm placement="bottom"
+            //   title="确认退出登录嘛？" onConfirm={(e) => cancelLogin(e)}
+            //   okText="是的" cancelText="取消">
+              <a href='#' onClick={(e) => cancelLogin(e)}>
+                退出登录
+              </a>
+            // {/* </Popconfirm> */}
           ),
         },
       ]}
@@ -123,31 +113,31 @@ export default function Header() {
       {},
     );
   }, [position]);
-
-  const [time, setTime] = useState("")
+  
+  const [time,setTime] = useState("")
   //倒计时
-  const timer = () => {
-    setTimeout(() => {
-      setTime(new Date().toLocaleString().replaceAll("/", "-"))
-    }, 1000)
+  const timer = ()=>{
+    setTimeout(()=>{
+      setTime(new Date().toLocaleString().replaceAll("/","-"))
+    },1000)
   }
-
-  useEffect(() => {
+  
+  useEffect(()=>{
     timer()
-  }, [time])
+  },[time])
 
   //点击logo
-  const clickLogo = () => {
+  const clickLogo = ()=>{
     router("/")
   }
   return (
-
+    
     <div className={style.box}>
       <div className={style.headers}>
-        <div className={style.logo} onClick={clickLogo}></div>
-        {time && (<div className={style.timer}>
+      <div className={style.logo} onClick={clickLogo}></div>
+        {time&&(<div className={style.timer}>
           当前时间: {time}
-        </div>)}
+          </div>)}
         <ul>
           {!sureLogin ? (<li>
             <a href="#" onClick={(e) => { login(e) }}>登录</a>
@@ -165,18 +155,18 @@ export default function Header() {
           </li>)}
           <li> <a href="#" onClick={(e) => { tiao(e, "/order") }}>我的订单</a></li>
           <li> <a href="#" onClick={(e) => { tiao(e, "/collect") }}>我的收藏</a></li>
-          <li className={style.cars} onClick={(e) => { tiao(e, "/car") }}>
-            <i className='iconfont icon-gouwuche'></i>
-            <a href="#" onClick={(e) => { tiao(e, "/car") }}>购物车</a>
-            <span>{"("} {sureLogin ? carTotal : 0} {")"}</span>
+          <li className={style.cars} onClick={(e) => { tiao(e, "/car") }}> 
+          <i className='iconfont icon-gouwuche'></i>
+          <a href="#" onClick={(e) => { tiao(e, "/car") }}>购物车</a>
+          <span>{"("} {sureLogin?carTotal:0} {")"}</span>
           </li>
         </ul>
-        <Tabs tabBarExtraContent={slot}
-          className={style.tabs}
-          size="large"
-          defaultActiveKey={location.pathname}
-          activeKey={location.pathname}
-          onChange={onChange}>
+        <Tabs tabBarExtraContent={slot} 
+        className={style.tabs} 
+        size="large" 
+        defaultActiveKey={location.pathname} 
+        activeKey={location.pathname}
+        onChange={onChange}>
           <TabPane tab="首页" key="/"></TabPane>
           <TabPane tab="全部商品" key="/goods"></TabPane>
           <TabPane tab="关于微商城" key="/about"></TabPane>

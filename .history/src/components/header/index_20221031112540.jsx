@@ -103,9 +103,13 @@ export default function Header() {
         {
           key: '2',
           label: (
+            // <Popconfirm placement="bottom"
+            //   title="确认退出登录嘛？" onConfirm={(e) => cancelLogin(e)}
+            //   okText="是的" cancelText="取消">
             <a href='#' onClick={(e) => cancelLogin(e)}>
               退出登录
             </a>
+            // {/* </Popconfirm> */}
           ),
         },
       ]}

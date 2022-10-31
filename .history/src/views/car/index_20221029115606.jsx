@@ -7,7 +7,7 @@ import style from "./style/index.module.scss"
 import { useSelector, useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import { Spin } from 'antd';
-import { setCarTotal, setRemoveCar } from '../../store/reducer/global';
+import { setSuccessTip, setPayDialog, setCarTotal, setRemoveCar } from '../../store/reducer/global';
 export default function Car() {
   const dispatch = useDispatch()
   const columns = [
@@ -15,7 +15,7 @@ export default function Car() {
       title: '商品图片',
       dataIndex: 'titleImg',
       width: 200,
-      render: (a,b) => (<img className={style.titleImg} src={a} onClick={() => clickDetail(b.detailId)} alt="" />),
+      render: (a) => (<img className={style.titleImg} src={a} alt="" />),
     },
     {
       title: '商品名称',

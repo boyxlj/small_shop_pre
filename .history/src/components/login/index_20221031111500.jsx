@@ -1,44 +1,56 @@
-import { Modal } from 'antd';
 import React, { useState } from 'react';
+import { Button, Modal, Form, Input, message } from 'antd';
 import { useSelector, useDispatch } from 'react-redux'
-import { changeRegisterDialogShow } from '../../store/reducer/login'
-import { Button, Form, Input, message } from 'antd';
-import { userRegister } from "../../api/request"
-export default function Register(){
+import { changeLoginDialogShow, isSureLogin } from '../../store/reducer/login'
+import { setUserInfo } from '../../store/reducer/user'
+import {setCarTotal} from "../../store/reducer/global"
+import { userLogin } from "../../api/request"
+import {useNavigate} from "react-router-dom"
+export default function Login(){
   const [form] = Form.useForm();
   const [isLoading, setLoading] = useState(false);
-  const isShowRegister = useSelector(state => state.loginDialog.isShowRegister)
+  const isShowLogin = useSelector(state => state.loginDialog.isShowLogin)
+  const fullPath = useSelector(state => state.loginDialog.fullPath)
   const dispatch = useDispatch()
+  const router = useNavigate()
 
   const handleOk = () => {
-    dispatch(changeRegisterDialogShow());
+    dispatch(changeLoginDialogShow());
   };
   const onCancel = () => {
     form.resetFields();
-    dispatch(changeRegisterDialogShow());
-  };
-  const onFinish = async (values) => {
-    setLoading(true)
-    const { data: res } = await userRegister(values).finally(()=>setLoading(false))
-    if (res.code == 403) return message.warning('账号已存在');
-    if (res.code == 404) return message.error('注册失败');
-    message.success('注册成功');
-    dispatch(changeRegisterDialogShow());
-    form.resetFields();
+    dispatch(changeLoginDialogShow());
   };
 
+  const onFinish = async (values) => {
+    setLoading(true)
+    const { data: res } = await userLogin(values).finally(()=> setLoading(false))
+    if (res.code == 403) return message.warning('账号不存在');
+    if (res.code == 404) return message.error('账号或密码错误');
+    message.success('登录成功');
+    if(fullPath){
+      router(fullPath)
+    } 
+    dispatch(setUserInfo(res.data[0]))
+    dispatch(changeLoginDialogShow());
+    window.location.reload()
+    dispatch(setCarTotal(res.data[0].userId))
+    form.resetFields();
+    dispatch(isSureLogin());
+    localStorage.setItem("token", res.token)
+  };
   const onFinishFailed = (errorInfo) => {
   };
 
   return (
     <>
-
-      <Modal title={
-        <h3 style={{ textAlign: "center", borderBottom: "none" }}>注册</h3>
-      } footer={null} visible={isShowRegister}
+      <Modal  title={
+        <h3 style={{ textAlign: "center", borderBottom: "none" }}>登录</h3>
+      } footer={null} visible={isShowLogin}
         maskClosable={false}
-        keyboard={false}
+        width={460}
         centered={true}
+        keyboard={false}
         onCancel={onCancel}
         onOk={handleOk} >
         <Form
@@ -58,19 +70,6 @@ export default function Register(){
           autoComplete="off"
         >
           <Form.Item
-            label="昵称"
-            name="name"
-            style={{ paddingBottom: "10px" }}
-            rules={[
-              {
-                required: true,
-                message: '请输入您的昵称',
-              },
-            ]}
-          >
-            <Input placeholder="请输入您的昵称" />
-          </Form.Item>
-          <Form.Item
             label="账号"
             name="username"
             style={{ paddingBottom: "10px" }}
@@ -81,7 +80,7 @@ export default function Register(){
               },
             ]}
           >
-            <Input placeholder="请输入您的账号" />
+            <Input placeholder='请输入账号' />
           </Form.Item>
 
           <Form.Item
@@ -95,7 +94,7 @@ export default function Register(){
               },
             ]}
           >
-            <Input.Password placeholder="请输入您的密码" />
+            <Input.Password placeholder='请输入密码' />
           </Form.Item>
 
 
@@ -106,7 +105,7 @@ export default function Register(){
             }}
           >
             <Button type="primary" loading={isLoading} block htmlType="submit">
-              立即注册
+              登录
             </Button>
           </Form.Item>
         </Form>
@@ -114,4 +113,3 @@ export default function Register(){
     </>
   );
 };
-
