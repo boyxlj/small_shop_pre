@@ -40,7 +40,7 @@ export default function Collect() {
     const { data: res } = await getUserCollect(userId).finally(() => {
       setTimeout(() => {
         setLoading(false)
-      }, 500)
+      }, 3500)
     })
     if (res.code != 200) return setCollectList([])
     setCollectList(res.data)

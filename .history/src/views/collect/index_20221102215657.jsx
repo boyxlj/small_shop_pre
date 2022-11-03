@@ -40,7 +40,7 @@ export default function Collect() {
     const { data: res } = await getUserCollect(userId).finally(() => {
       setTimeout(() => {
         setLoading(false)
-      }, 500)
+      }, 3500)
     })
     if (res.code != 200) return setCollectList([])
     setCollectList(res.data)
@@ -62,11 +62,24 @@ export default function Collect() {
   const tiaoDetail = (value) => {
     navigate(`/details?detailId=${value}`)
   }
+  const test = (
+    <>
+      <div className={style.loader}>
+        <div className={style.face}>
+          <div className={style.circle}></div>
+        </div>
+        <div className={style.face}>
+          <div className={style.circle}></div>
+        </div>
+
+      </div>
+    </>
+  );
   return (
     <div className={style.collect}>
       {loading && (
         <div className={style.loading} style={{ padding: loading ? '180px 0' : '0' }}>
-          <Spin  />
+          <Spin indicator={test} />
         </div>
       )}
       {
