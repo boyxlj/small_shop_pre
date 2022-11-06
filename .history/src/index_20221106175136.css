@@ -1,0 +1,34 @@
+body,html{
+  margin: 0;
+  padding: 0;
+  user-select: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.ant-tabs-nav{
+  margin-bottom: 0 !important;
+}
+li{
+  list-style: none;
+}
+
+:root {
+  --themeColor: #CF0A2C;
+  --btnBorderRadius:6px;
+  --shopItemBorderRadius:6px;   
+  --hoverThemeColor:#ba1934;
+  --bgColor:#f1f3f5
+}
+
+.customTag{
+  background-image: linear-gradient(to right,
+  red,
+  rgb(105, 231, 158),
+  red,
+  red,
+  
+  );
+}
