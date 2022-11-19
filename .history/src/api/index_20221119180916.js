@@ -1,6 +1,6 @@
 import Axios from "axios"
 
-Axios.defaults.baseURL = "http://localhost:3000/api"
+// Axios.defaults.baseURL = "http://localhost:3000/api"
 Axios.interceptors.request.use((config)=>{
   const token = localStorage.getItem("token")
   if(token){
