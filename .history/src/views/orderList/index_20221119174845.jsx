@@ -7,9 +7,7 @@ import AllOrder from "./components/allOrder"
 import AwaitPay from "./components/awaitPay"
 import AwaitShou from "./components/awaitShou"
 import Recyle from "./components/recyle"
-import { useSearchParams ,useNavigate} from 'react-router-dom'
 export default function OrderList() {
-  const navigate = useNavigate()
   const menus = [
     {id:0,name:"全部有效订单"},
     {id:2,name:"待支付"},
@@ -17,21 +15,20 @@ export default function OrderList() {
     {id:4,name:"订单回收站"},
   ]
   const [selectState,setSelectState] = useState(menus[0].id)
-  const [params] = useSearchParams()
   useEffect(()=>{
+    
     document.documentElement.scrollTop=0
-    const orderTabsId = params.get("orderTabsId")
-    if(!orderTabsId){
-      navigate(`/order/orderList?orderTabsId=0`,{replace:true})
-      setSelectState(0)
+    const nums = sessionStorage.getItem('orderListNum')
+    if(nums){
+      setSelectState(nums)
     }else{
-      setSelectState(Number(orderTabsId))
+      setSelectState(menus[0].id)
     }
-  },[params.get("orderTabsId")])
+  },[])
   //点击选项
   const clickOrder = async(value)=>{
+    sessionStorage.setItem("orderListNum",value)
     setSelectState(value)
-    navigate(`/order/orderList?orderTabsId=${value}`)
   }
 
   return (

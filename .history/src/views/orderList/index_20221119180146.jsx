@@ -18,7 +18,10 @@ export default function OrderList() {
   ]
   const [selectState,setSelectState] = useState(menus[0].id)
   const [params] = useSearchParams()
+  const [tabsId,setTabsId] = useState(params.get("orderTabsId"))
+  // console.log(params.get("orderTabsId"))
   useEffect(()=>{
+    console.log("变化")
     document.documentElement.scrollTop=0
     const orderTabsId = params.get("orderTabsId")
     if(!orderTabsId){
@@ -27,9 +30,18 @@ export default function OrderList() {
     }else{
       setSelectState(Number(orderTabsId))
     }
-  },[params.get("orderTabsId")])
+
+    
+    // const nums = sessionStorage.getItem('orderListNum')
+    // if(nums){
+    //   setSelectState(nums)
+    // }else{
+    //   setSelectState(menus[0].id)
+    // }
+  },[orderTabsId])
   //点击选项
   const clickOrder = async(value)=>{
+    // sessionStorage.setItem("orderListNum",value)
     setSelectState(value)
     navigate(`/order/orderList?orderTabsId=${value}`)
   }
