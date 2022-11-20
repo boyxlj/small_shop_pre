@@ -1,0 +1,16 @@
+.detailSwiper{
+  height: 560px;
+  background-color: skyblue;
+  position: relative;
+  overflow: hidden;
+  div{
+    overflow: hidden;
+    img{
+      width: 102%;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+    }
+  }
+}
+
