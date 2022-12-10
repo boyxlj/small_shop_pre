@@ -1,0 +1,10 @@
+.notFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .bg{
+    width: 500px;
+    height: 400px;
+    background-image: url("../../../assets/images/404/notFound.png");
+  }
+}

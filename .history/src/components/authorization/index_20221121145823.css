@@ -1,0 +1,12 @@
+.fade-exit {
+  opacity: 0;
+}
+
+.fade-exit-active {
+  opacity: 1;
+}
+
+.fade-enter-active,
+.fade-exit-active {
+  transition: all .3s;
+}
