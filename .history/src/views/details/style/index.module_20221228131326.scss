@@ -7,6 +7,8 @@
     box-shadow: 0 6px 10px #ddd;
     position: relative;
     top: -26px;
+    background-color: skyblue;
+    position: fixed;
     .top {
       display: flex;
       width: 1226px;
@@ -17,7 +19,6 @@
       align-items: center;
       position: relative;
       user-select: none;
-
       li {
         list-style: none;
       }
